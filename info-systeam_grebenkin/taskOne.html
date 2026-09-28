@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Угадай число</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <div class="arrow">
+          <a href="./practical_task.html" class="back">←</a>
+        <a href="./taskOne.html" class="back">↻</a>
+    </div>
+  
+    <h1 class="page-title">1. Задача "Угадай число"</h1>
+
+
+    <div class="container-OneTaskHtml">
+            <form action="" class="OneTaskText">
+
+        <input class="txt-one" type="number" name="textarea" id="myNumber" placeholder="Введите свое число"></input>
+        <button class="btn-one" type="button" onclick="checNumber()">GO</button>
+        <p id="resultat">Результат:</p>
+    </form>
+
+    </div>
+  
+    <script>
+
+    var randomchislo = Math.floor(Math.random() * 100) + 1; 
+
+    function checNumber() { 
+    
+        var userNumber = document.getElementById("myNumber").value;
+        var resultat = document.getElementById("result");
+
+       
+        if (userNumber < 1 || userNumber > 100) { 
+            alert("введите число от 1 до 100");
+
+
+        }
+
+        
+        if (userNumber > randomchislo) {
+            
+            resultat.value = "результат: Меньше";
+        } 
+        else if (userNumber < randomchislo) {
+            resultat.value = "результат: большее";
+        } 
+        else {
+            resultat.value = "результат: верно";
+        }
+    }
+
+
+</script>
+
+
+
+
+</body>
+</html>
